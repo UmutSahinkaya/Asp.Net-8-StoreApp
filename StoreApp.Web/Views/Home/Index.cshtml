@@ -2,6 +2,9 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@if(Model.Products.Count()==0){
+    <p>Ürün Bulunamadı</p>
+}
 @foreach(var p in Model.Products)
 {
     <div class="text-center">
