@@ -13,3 +13,10 @@
         <p>@p.Price</p>
     </div>
 }
+
+@* @for(var i = 1; i <= Model.PageInfo.TotalPages;i++)
+{
+    <a class="btn btn-outline-secondary" href="/?page=@i">@i</a>
+} *@
+
+<div class="btn btn-outline-danger" page-model="@Model.PageInfo" page-action="Index"></div>

@@ -31,7 +31,12 @@ namespace StoreApp.Web.Controllers
             }).Take(pageSize);
             return View(new ProductListViewModel
             {
-                Products = products
+                Products = products,
+                PageInfo=new PageInfo
+                {
+                    ItemsPerPage = pageSize,
+                    TotalItems=_repository.Products.Count()
+                }
             });
         }
 
