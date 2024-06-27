@@ -15,7 +15,7 @@ namespace StoreApp.Web.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
             var products = _repository.Products.Select(p=> new ProductViewModel
             {
@@ -25,7 +25,10 @@ namespace StoreApp.Web.Controllers
                 Description = p.Description,
                 Category = p.Category
             }).ToList();
-            return View(products);
+            return View(new ProductListViewModel
+            {
+                Products = products
+            });
         }
 
         public IActionResult Privacy()
