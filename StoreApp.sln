@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35017.193
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp.Web", "StoreApp.Web\StoreApp.Web.csproj", "{6F4F3B5F-63B6-4E43-A753-37669E8E8CF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp.Data", "StoreApp.Data\StoreApp.Data.csproj", "{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6F4F3B5F-63B6-4E43-A753-37669E8E8CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F4F3B5F-63B6-4E43-A753-37669E8E8CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F4F3B5F-63B6-4E43-A753-37669E8E8CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
