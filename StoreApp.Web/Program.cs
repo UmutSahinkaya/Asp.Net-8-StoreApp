@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using StoreApp.Data.Abstract;
 using StoreApp.Data.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<StoreDbContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("CustomConnection"));
 });
+
+builder.Services.AddScoped<IStoreRepository,EfStoreRepository>();
 
 var app = builder.Build();
 
