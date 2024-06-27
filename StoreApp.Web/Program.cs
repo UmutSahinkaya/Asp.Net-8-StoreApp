@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<StoreDbContext>(opt =>
 {
-    opt.UseSqlite(builder.Configuration.GetConnectionString("CustomConnection"));
+    opt.UseSqlite(builder.Configuration.GetConnectionString("CustomConnection"),b=>b.MigrationsAssembly("StoreApp.Web"));
 });
 
 builder.Services.AddScoped<IStoreRepository,EfStoreRepository>();

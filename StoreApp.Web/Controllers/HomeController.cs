@@ -17,7 +17,15 @@ namespace StoreApp.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var products = _repository.Products.Select(p=> new ProductViewModel
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Price = p.Price,
+                Description = p.Description,
+                Category = p.Category
+            }).ToList();
+            return View(products);
         }
 
         public IActionResult Privacy()
