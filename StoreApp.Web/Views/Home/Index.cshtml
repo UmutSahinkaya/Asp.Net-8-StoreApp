@@ -2,21 +2,41 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@if(Model.Products.Count()==0){
-    <p>Ürün Bulunamadı</p>
-}
-@foreach(var p in Model.Products)
-{
-    <div class="text-center">
-        <h4 class ="display-4">@p.Name</h4>
-        <p>@p.Description</p>
-        <p>@p.Price</p>
+
+<div class="row">
+    <div class="col col-md-3">
+        Kategoriler
     </div>
-}
+    <div class="col col-md-9">
+        @if (Model.Products.Count() == 0)
+        {
+            <p>Ürün Bulunamadı</p>
+        }
+        @foreach (var p in Model.Products)
+        {
+            <div class="card card-outline-secondary mb-2 p-1">
+                <div class="d-flex justify-content-between">
+                    <h4 class="display-4">@p.Name</h4>
+                    <p>@p.Description</p>
+                </div>
+                <div>
+                    <span class=" badge rounded-pill text-bg-success">@p.Price</span>
+                </div>
+            </div>
+        }
 
-@* @for(var i = 1; i <= Model.PageInfo.TotalPages;i++)
-{
-    <a class="btn btn-outline-secondary" href="/?page=@i">@i</a>
-} *@
+        @* @for(var i = 1; i <= Model.PageInfo.TotalPages;i++)
+        {
+        <a class="btn btn-outline-secondary" href="/?page=@i">@i</a>
+        } *@
 
-<div class="btn btn-outline-danger" page-model="@Model.PageInfo" page-action="Index"></div>
+        <div page-model="@Model.PageInfo"
+             page-action="Index"
+             page-class="btn"
+             page-class-link="btn-outline-secondary"
+             page-class-active="btn-secondary">
+        </div>
+
+    </div>
+</div>
+
