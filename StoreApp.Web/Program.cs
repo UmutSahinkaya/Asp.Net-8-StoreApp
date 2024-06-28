@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Data.Abstract;
 using StoreApp.Data.Concrete;
+using StoreApp.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddDbContext<StoreDbContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("CustomConnection"),b=>b.MigrationsAssembly("StoreApp.Web"));
 });
+
+builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
 
 builder.Services.AddScoped<IStoreRepository,EfStoreRepository>();
 
