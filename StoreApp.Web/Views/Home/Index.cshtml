@@ -1,42 +1,35 @@
 ﻿@model ProductListViewModel
-@{
-    ViewData["Title"] = "Home Page";
-}
 
 <div class="row">
-    <div class="col col-md-3">
-        Kategoriler
+    <div class="col-md-3">
+        <vc:categories-list />
     </div>
-    <div class="col col-md-9">
+    <div class="col-md-9">
         @if (Model.Products.Count() == 0)
         {
-            <p>Ürün Bulunamadı</p>
+            <p>Ürün bulunamadı.</p>
         }
+
         @foreach (var p in Model.Products)
         {
-            <div class="card card-outline-secondary mb-2 p-1">
+            <div class="card card-outline-secondary mb-2 p-2">
                 <div class="d-flex justify-content-between">
-                    <h4 class="display-4">@p.Name</h4>
-                    <p>@p.Description</p>
-                </div>
-                <div>
-                    <span class=" badge rounded-pill text-bg-success">@p.Price</span>
+                    <div>
+                        <h4>@p.Name</h4>
+                        <p>@p.Description</p>
+                    </div>
+                    <div>
+                        <span class="badge rounded-pill text-bg-success">@p.Price TL</span>
+                    </div>
                 </div>
             </div>
         }
-
-        @* @for(var i = 1; i <= Model.PageInfo.TotalPages;i++)
-        {
-        <a class="btn btn-outline-secondary" href="/?page=@i">@i</a>
-        } *@
 
         <div page-model="@Model.PageInfo"
              page-action="Index"
              page-class="btn"
              page-class-link="btn-outline-secondary"
-             page-class-active="btn-secondary">
-        </div>
-
+             page-class-active="btn-secondary"
+             class="btn-group my-2"></div>
     </div>
 </div>
-
