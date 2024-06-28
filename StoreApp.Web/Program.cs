@@ -13,7 +13,7 @@ builder.Services.AddDbContext<StoreDbContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("CustomConnection"),b=>b.MigrationsAssembly("StoreApp.Web"));
 });
 
-builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
+//builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
 
 builder.Services.AddScoped<IStoreRepository,EfStoreRepository>();
 

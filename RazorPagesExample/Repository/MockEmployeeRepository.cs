@@ -4,9 +4,9 @@ namespace RazorPagesExample.Repository
 {
     public class MockEmployeeRepository : IEmployeeRepository
     {
-        private List<Employee> _employeeList;
+        private readonly List<Employee> _employeeList;
 
-        public MockEmployeeRepository(List<Employee> employeeList)
+        public MockEmployeeRepository()
         {
             _employeeList = new List<Employee>()
             {

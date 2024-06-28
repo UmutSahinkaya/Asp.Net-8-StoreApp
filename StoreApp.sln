@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Web", "StoreApp.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Data", "StoreApp.Data\StoreApp.Data.csproj", "{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesExample", "RazorPagesExample\RazorPagesExample.csproj", "{03C7EA26-CD03-4B23-8134-3044FB6C5404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesExample", "RazorPagesExample\RazorPagesExample.csproj", "{03C7EA26-CD03-4B23-8134-3044FB6C5404}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

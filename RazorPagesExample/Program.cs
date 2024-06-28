@@ -4,7 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+
+builder.Services.AddTransient<IEmployeeRepository, MockEmployeeRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
