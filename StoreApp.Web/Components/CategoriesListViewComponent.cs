@@ -14,7 +14,12 @@ namespace StoreApp.Web.Components
 
         public IViewComponentResult Invoke()
         {
-            return View(_storeRepository.Products.Select(c=>c.Category).Distinct().OrderBy(c=>c));
+            return View(_storeRepository.Categories.Select(c=> new CategoryViewModel
+            {
+                Id=c.Id,
+                Name=c.Name,
+                Url=c.Url
+            }).ToList());
         }
     }
 }
