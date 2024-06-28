@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35017.193
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp.Web", "StoreApp.Web\StoreApp.Web.csproj", "{6F4F3B5F-63B6-4E43-A753-37669E8E8CF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Web", "StoreApp.Web\StoreApp.Web.csproj", "{6F4F3B5F-63B6-4E43-A753-37669E8E8CF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp.Data", "StoreApp.Data\StoreApp.Data.csproj", "{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Data", "StoreApp.Data\StoreApp.Data.csproj", "{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesExample", "RazorPagesExample\RazorPagesExample.csproj", "{03C7EA26-CD03-4B23-8134-3044FB6C5404}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE28A1CC-08E0-491D-91C9-FA6349E8EA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C7EA26-CD03-4B23-8134-3044FB6C5404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C7EA26-CD03-4B23-8134-3044FB6C5404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C7EA26-CD03-4B23-8134-3044FB6C5404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C7EA26-CD03-4B23-8134-3044FB6C5404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
