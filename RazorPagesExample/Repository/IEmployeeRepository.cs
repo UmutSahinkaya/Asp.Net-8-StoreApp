@@ -6,5 +6,6 @@ namespace RazorPagesExample.Repository
     {
         IEnumerable<Employee> GetAll();
         Employee GetById(int id);
+        Employee Update(Employee entity);
     }
 }

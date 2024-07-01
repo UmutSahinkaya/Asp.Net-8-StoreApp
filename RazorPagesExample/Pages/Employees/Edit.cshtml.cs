@@ -7,6 +7,7 @@ namespace RazorPagesExample.Pages.Employees
 {
     public class EditModel : PageModel
     {
+        [BindProperty]
         public Employee Employee { get; set; } = null!;
         private readonly IEmployeeRepository _employeeRepository;
 
@@ -19,9 +20,15 @@ namespace RazorPagesExample.Pages.Employees
         {
             Employee=_employeeRepository.GetById(id);
         }
-        public void OnPost(int id)
+        //public IActionResult OnPost(Employee employee)
+        //{
+        //    Employee = _employeeRepository.Update(employee);
+        //    return RedirectToPage("/Employees/Index");
+        //}
+        public IActionResult OnPost()
         {
-            Employee = _employeeRepository.GetById(id);
+            Employee = _employeeRepository.Update(Employee);
+            return RedirectToPage("/Employees/Index");
         }
     }
 }
