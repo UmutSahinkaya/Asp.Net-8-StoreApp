@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model RazorPagesExample.Pages.Employees.IndexModel
 @{
     ViewData["Title"] = "Employees";
@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@emp.Name</h5>
                     <p class="card-text">@emp.Department</p>
-                    <a href="#" class="btn btn-primary">Details</a>
+                    <a asp-page="/employees/details" asp-route-id="@emp.Id" class="btn btn-primary">Details</a>
                 </div>
             </div>
         </div>
