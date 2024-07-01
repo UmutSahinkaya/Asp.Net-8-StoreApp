@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -8,7 +8,7 @@ using StoreApp.Web.Models;
 namespace StoreApp.Web.TagHelpers;
 
 [HtmlTargetElement("div", Attributes = "page-model")]
-public class PageLinkTagHelper : TagHelper
+public class PageLinkTagHelper: TagHelper
 {
     private IUrlHelperFactory _urlHelperFactory;
     public PageLinkTagHelper(IUrlHelperFactory urlHelperFactory)
@@ -24,15 +24,15 @@ public class PageLinkTagHelper : TagHelper
     public string PageClassActive { get; set; } = string.Empty;
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        if (ViewContext != null && PageModel != null)
+        if(ViewContext != null && PageModel != null)
         {
             IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
             TagBuilder div = new TagBuilder("div");
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder link = new TagBuilder("a");
-                link.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
-
+                link.Attributes["href"] = urlHelper.Action(PageAction, new { page = i});
+                
                 link.AddCssClass(PageClass);
                 link.AddCssClass(i == PageModel.CurrentPage ? PageClassActive : PageClassLink);
 

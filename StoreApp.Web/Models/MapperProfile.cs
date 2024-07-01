@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using StoreApp.Data.Concrete;
 
 namespace StoreApp.Web.Models;
@@ -9,5 +9,4 @@ public class MapperProfile:Profile
     {
         CreateMap<Product, ProductViewModel>();
     }
-
 }

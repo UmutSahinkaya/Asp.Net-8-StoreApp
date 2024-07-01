@@ -5,39 +5,28 @@ using StoreApp.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<StoreDbContext>(opt =>
-{
-    opt.UseSqlite(builder.Configuration.GetConnectionString("CustomConnection"),b=>b.MigrationsAssembly("StoreApp.Web"));
+builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
+
+builder.Services.AddDbContext<StoreDbContext>(options => {
+    options.UseSqlite(builder.Configuration["ConnectionStrings:StoreDbConnection"], b =>b.MigrationsAssembly("StoreApp.Web"));
 });
 
-//builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
-
-builder.Services.AddScoped<IStoreRepository,EfStoreRepository>();
+builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
+// products/telefon => kategori urun listesi
+app.MapControllerRoute("products_in_category", "products/{category?}", new { controller = "Home", action = "Index" });
 
-app.UseAuthorization();
+// samsung-s24 => urun detay
+app.MapControllerRoute("product_details", "{name}", new { controller = "Home", action = "Details" });
 
-
-app.MapControllerRoute("product_dateils", "{name}", new { controller = "Home", action = "Details" });
-app.MapControllerRoute("product_in_category", "products/{category?}", new { controller = "Home", action = "Index" });
 app.MapDefaultControllerRoute();
-
+app.MapRazorPages();
 
 app.Run();

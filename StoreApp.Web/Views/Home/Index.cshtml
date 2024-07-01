@@ -1,16 +1,16 @@
-﻿@model ProductListViewModel
+@model ProductListViewModel
 
 <div class="row">
     <div class="col-md-3">
         <vc:categories-list />
     </div>
     <div class="col-md-9">
-        @if (Model.Products.Count() == 0)
+        @if(Model.Products.Count() == 0)
         {
             <p>Ürün bulunamadı.</p>
         }
 
-        @foreach (var p in Model.Products)
+        @foreach(var p in Model.Products)
         {
             <div class="card card-outline-secondary mb-2 p-2">
                 <div class="d-flex justify-content-between">
@@ -22,18 +22,22 @@
                         <span class="badge rounded-pill text-bg-success">@p.Price TL</span>
                     </div>
                 </div>
+                <form asp-page="/Cart" method="post">
+                    <input type="hidden" asp-for="@p.Id">
+                    <button type="submit" class="btn btn-outline-success btn-sm pull-right" style="float:right;">Sepete Ekle</button>
+                </form>
             </div>
         }
 
-        @if (Model.PageInfo.TotalPages > 1)
+        @if(Model.PageInfo.TotalPages > 1)
         {
-            <div page-model="@Model.PageInfo"
-                 page-action="Index"
-                 page-class="btn"
-                 page-class-link="btn-outline-secondary"
-                 page-class-active="btn-secondary"
-                 class="btn-group my-2">
-            </div>
+            <div 
+                page-model="@Model.PageInfo" 
+                page-action="Index"
+                page-class="btn"
+                page-class-link="btn-outline-secondary"
+                page-class-active="btn-secondary"
+                class="btn-group my-2"></div>
         }
     </div>
 </div>
